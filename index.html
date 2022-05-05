@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>CSS Parallax Website</title>
+		<link rel="stylesheet" href="style.css" />
+	</head>
+	<body>
+		<header id="header">
+			<a href="#" class="logo">Logo</a>
+			<ul>
+				<li><a href="#" class="active">Home</a></li>
+				<li><a href="#">About</a></li>
+				<li><a href="#">Work</a></li>
+				<li><a href="#">Contact</a></li>
+			</ul>
+		</header>
+		<section>
+			<img src="images/stars.png" id="stars" />
+			<img src="images/moon.png" id="moon" />
+			<img src="images/mountains_behind.png" id="mountains_behind" />
+			<h2 id="text">Moon Light</h2>
+			<a href="#sec" id="btn">Explore</a>
+			<img src="images/mountains_front.png" id="mountains_front" />
+		</section>
+		<div class="sec" id="sec">
+			<h2>Parallax Scrolling Effects</h2>
+			<p>
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae soluta
+				quis optio dolorem omnis ea temporibus molestiae voluptates, amet, id
+				rem ipsum illum ducimus voluptatum quidem quas expedita aspernatur porro
+				voluptate, fugiat debitis! Dolorem totam expedita itaque doloremque
+				commodi sunt ad praesentium! Ipsam dolores nisi odit similique. Maiores
+				et tempore mollitia veniam itaque laboriosam vitae voluptatem repellat
+				culpa, eum voluptates, enim perspiciatis ea odit possimus vero voluptas
+				non consequatur quibusdam, amet accusantium nemo quia quisquam! Fuga
+				obcaecati possimus, explicabo odit nostrum autem vel, minus deleniti
+				itaque error perferendis ab adipisci cum necessitatibus fugit
+				perspiciatis unde, reiciendis amet aliquid voluptates natus!<br /><br />
+				Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae soluta
+				quis optio dolorem omnis ea temporibus molestiae voluptates, amet, id
+				rem ipsum illum ducimus voluptatum quidem quas expedita aspernatur porro
+				voluptate, fugiat debitis! Dolorem totam expedita itaque doloremque
+				commodi sunt ad praesentium! Ipsam dolores nisi odit similique. Maiores
+				et tempore mollitia veniam itaque laboriosam vitae voluptatem repellat
+				culpa, eum voluptates, enim perspiciatis ea odit possimus vero voluptas
+				non consequatur quibusdam, amet accusantium nemo quia quisquam! Fuga
+				obcaecati possimus, explicabo odit nostrum autem vel, minus deleniti
+				itaque error perferendis ab adipisci cum necessitatibus fugit
+				perspiciatis unde, reiciendis amet aliquid voluptates natus!<br /><br />
+			</p>
+		</div>
+
+		<script>
+			let stars = document.getElementById("stars");
+			let moon = document.getElementById("moon");
+			let mountains_behind = document.getElementById("mountains_behind");
+			let text = document.getElementById("text");
+			let btn = document.getElementById("btn");
+			let mountains_front = document.getElementById("mountains_front");
+			let header = document.getElementById("header");
+
+			window.addEventListener("scroll", function () {
+				let value = window.scrollY;
+				stars.style.left = value + "px";
+				moon.style.top = value * 1 + "px";
+				mountains_behind.style.top = value * 0.5 + "px";
+				mountains_front.style.top = value * 0 + "px";
+				text.style.marginRight = value * 4 + "px";
+				text.style.marginTop = value * 1 + "px";
+				btn.style.marginTop = value * 1 + "px";
+				header.style.top = value * 0.5 + "px";
+			});
+		</script>
+	</body>
+</html>
